@@ -9,15 +9,15 @@ from google.cloud import texttospeech, speech
 # CONFIGURATION
 # ===============================
 # 🔑 OpenRouter (DeepSeek)
-OPENROUTER_API_KEY = "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"  #dump Replace with your key
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+OPENROUTER_API_KEY = "API_KEY"  #dump Replace with your key
+OPENROUTER_URL = " "
 OPENROUTER_HEADERS = {
     "Authorization": f"Bearer {OPENROUTER_API_KEY}",
     "Content-Type": "application/json"
 }
 
 # 🔑 Google Cloud Service Account JSON
-SERVICE_ACCOUNT_FILE = r"C:\Study material\NLP-app\project\teak-medium-472300-f3-876caacb8a7a.json"
+SERVICE_ACCOUNT_FILE = "FILE_LOCATION"
 
 # Initialize Google clients from JSON
 tts_client = texttospeech.TextToSpeechClient.from_service_account_file(SERVICE_ACCOUNT_FILE)
@@ -142,3 +142,4 @@ def speech_to_text(req: STTRequest):
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"STT error: {str(e)}")
+
